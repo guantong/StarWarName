@@ -45,4 +45,8 @@ public class StarWarName implements Serializable {
     public String getpName() {
         return pName;
     }
+
+    public String printNewName() {
+        return (fName + " " + lName + " " + pName);
+    }
 }

@@ -1,17 +1,30 @@
 package com.guantong.starwarname;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class DisplayNewName extends ActionBarActivity {
+
+    private StarWarName currentStarWarName;
+    private TextView newSWN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_new_name);
+
+        Intent intent = getIntent();
+        currentStarWarName = (StarWarName)intent.getSerializableExtra("StarWarName");
+
+        newSWN = (TextView)findViewById(R.id.swName);
+
+        newSWN.setText(currentStarWarName.printNewName());
     }
 
 
@@ -35,5 +48,10 @@ public class DisplayNewName extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void backToPrevious(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

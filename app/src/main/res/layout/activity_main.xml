@@ -48,7 +48,8 @@
             android:layout_height="wrap_content"
             android:text="Create Star War Name"
             android:id="@+id/submitButton"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:onClick="generateNewName" />
 
     </LinearLayout>
 </RelativeLayout>
